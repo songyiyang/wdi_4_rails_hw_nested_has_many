@@ -1,2 +1,16 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>User</h1>
+ <p><%= link_to 'New article', new_user_article_path(@user.id) %></p>
+
+
+
+<h2><%= @user.name %></h2>
+<h3><%= @user.email %></h3>
+
+<dl>
+  <% @user.articles.each do |article| %>
+  <dt><%= link_to article.title, user_article_path(@user.id, article.id) %></dt><dd><%= article.body%></dd>
+  <% end %>
+</dl>
+<hr>
+
+<%= link_to "Users", users_path %>

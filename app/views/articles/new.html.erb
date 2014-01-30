@@ -1,0 +1,10 @@
+<h1>Create New Article</h1>
+
+
+<%= form_for [@user, @article] do |form| %>
+<%= form.label :title %>
+<%= form.text_area :body%>
+<%= form.label :body %>
+<%= form.text_area :body, rows: 10, cols: 80 %>
+<%= form.submit value="Submit article"%>
+<% end %>
