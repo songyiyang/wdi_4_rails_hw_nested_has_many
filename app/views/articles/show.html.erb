@@ -9,5 +9,14 @@
 
 <h2>Comments</h2>
 
+<dl>
+  <% @article.comments.each do |comment| %>
+  <dt>Comment: </dt><dd><%= comment.body%></dd>
+  <% end %>
+</dl>
+
+<%= link_to "New Comment", new_user_article_comment_path(@user.id, @article.id) %><br/>
 
 
+
+<%= link_to "Back to User", user_path(@user) %>

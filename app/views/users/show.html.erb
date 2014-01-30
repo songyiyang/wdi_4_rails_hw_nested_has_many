@@ -1,16 +1,16 @@
-<h1>User</h1>
+<h1>User : <%= @user.name %></h1>
+<p> User email: <%= @user.email %><p>
  <p><%= link_to 'New article', new_user_article_path(@user.id) %></p>
 
 
 
-<h2><%= @user.name %></h2>
-<h3><%= @user.email %></h3>
+
 
 <dl>
   <% @user.articles.each do |article| %>
-  <dt><%= link_to article.title, user_article_path(@user.id, article.id) %></dt><dd><%= article.body%></dd>
+  <dt><%= link_to article.title, user_article_path(@user.id, article.id) %></dt><dd><%= article.body%></dd><br><br>
   <% end %>
 </dl>
 <hr>
 
-<%= link_to "Users", users_path %>
+<%= link_to "Back to Users", users_path %>

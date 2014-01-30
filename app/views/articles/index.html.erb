@@ -4,14 +4,16 @@
 
 <dl>
 		<% if user.articles.all.include?(article) == true %>
-    <dt><%= link_to article.title, user_article_path(user.id, article.id) %></dt>
-    <%= link_to user.name, user_path(user.id) %>
-    <dd><%= truncate(article.body, length: 80) %></dd>
+    <dt><h2><%= link_to article.title, user_article_path(user.id, article.id) %></h2></dt>
+    Author: <%= link_to user.name, user_path(user.id) %> Comments: <%= article.comments.count %><br>
+    Pre-view: <%= truncate(article.body, length: 80) %>
     <% end %>
 
   <% end %>
   <% end %>
 </dl>
+
+<h2><%= link_to 'User Page', users_path %></h2>
 
 
 

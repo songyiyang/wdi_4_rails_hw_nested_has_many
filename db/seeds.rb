@@ -7,4 +7,4 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-article2 = Article.create(title: 'The winter', body: 'dfdfjwifoewfjewiorjewiorjewiojewoirjewiorjewiofjeiwofjsdiofj', user_id: 3)
+comment1 = Comment.create(body: 'I comment it', article_id: 1)

@@ -3,8 +3,8 @@
 
 <%= form_for [@user, @article] do |form| %>
 <%= form.label :title %>
-<%= form.text_area :body%>
+<%= form.text_area :title%><br>
 <%= form.label :body %>
-<%= form.text_area :body, rows: 10, cols: 80 %>
+<%= form.text_area :body, rows: 10, cols: 80 %><br><br>
 <%= form.submit value="Submit article"%>
 <% end %>
