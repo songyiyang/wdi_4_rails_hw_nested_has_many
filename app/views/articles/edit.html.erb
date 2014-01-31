@@ -1,2 +1,10 @@
-<h1>Articles#edit</h1>
-<p>Find me in app/views/articles/edit.html.erb</p>
+<h1> Edit</h1>
+
+
+<%= form_for [@user, @article] do |form| %>
+<%= form.label :title %>
+<%= form.text_area :title %><br>
+<%= form.label :body %>
+<%= form.text_area :body, rows: 10, cols: 80 %><br><br>
+<%= form.submit value="Submit article"%>
+<% end %>

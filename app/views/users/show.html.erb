@@ -9,7 +9,8 @@
 
 <dl>
   <% @user.articles.each do |article| %>
-  <dt><h2><%= link_to article.title, user_article_path(@user.id, article.id) %></h2></dt><dd><%= truncate(article.body, length: 120) %></dd><br><br>
+  <dt><h2><%= link_to article.title, user_article_path(@user.id, article.id) %></h2></dt>
+  <dd><%= truncate(article.body, length: 120) %></dd><br><br>
   <% end %>
 </dl>
 <hr>

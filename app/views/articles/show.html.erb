@@ -2,16 +2,18 @@
 
 <dl>
 
-    <dt><%= link_to @article.title, user_article_path(@user.id, @article.id) %></dt>
+    <dt><h3><%= link_to @article.title, user_article_path(@user.id, @article.id) %>
+    </h3></dt>
     <dd><%= @article.body %></dd>
-
+    <%= link_to "Edit this article", edit_user_article_path(@user.id, @article.id) %>
+		 | <%= link_to "Delete this article", user_article_path(@user.id, @article.id), confirm: "YOU SURE?", method: :delete %>
 </dl>
 
 <h2>Comments</h2>
 
 <dl>
   <% @article.comments.each do |comment| %>
-  <dt>Comment: </dt><dd><%= comment.body%></dd>
+  <dt>Comment @ <%= comment.created_at.strftime("%d %b. %Y") %> : </dt><dd> <%=time_ago_in_words(comment.created_at) %> ago:  <%= comment.body%></dd>
   <% end %>
 </dl>
 

@@ -15,24 +15,26 @@ class ArticlesController < ApplicationController
   end
 
   def new
-    @article = Article.new
+   # @article = Article.new
+    @article = @user.articles.new
   end
 
   def create
-    @user.articles << Article.create!(article_params)
-    redirect_to user_path(@user.id)    
+    article = Article.create!(article_params)
+    @user.articles << article
+    redirect_to user_article_path(@user.id, article.id)    
     
   end
 
   def edit
+    @article = Article.find(params[:id])
   end
 
   def update
-    find_article
-    render :_form
-    if @article.save
+    article = @user.articles.new(article_params)
+    if article.save!
       flash[:notice] = 'Updated the article!'
-
+      redirect_to user_article_path(@user, article)
     else
       flash.now[:errors] = @article.errors.full_messages
       render :edit
