@@ -5,12 +5,12 @@ gem 'rails', '4.0.2'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
-
+gem 'devise'
 group :development do
   gem "rails-erd", github: 'bshelton229/rails-erd', branch: 'mavericks'
 end
 gem 'pry-rails'
-
+gem 'devise'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
